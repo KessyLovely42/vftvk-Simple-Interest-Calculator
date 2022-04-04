@@ -7,10 +7,17 @@ function compute()
     var year = new Date().getFullYear() + parseInt(years);
 
     interest = principal * rate / years;
-    document.getElementById("result").innerHTML = "If you deposit " + principal + "<br>"
+
+    if(principal <= 0 || principal ==""){
+        alert("please enter a positive number");
+        document.getElementById("principal").focus();
+    }else{
+            document.getElementById("result").innerHTML = "If you deposit " + principal + "<br>"
         + "at an interest rate of " + rate +
         "<br>" + " You will receive an amount of " + interest + "<br>" +
         "in the year " + year;
+    }
+
 }
 
 //function to show slider value
